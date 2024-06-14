@@ -1,0 +1,53 @@
+/* Additional styles for forum elements */
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #616161;
+    border-radius: 12px;
+    background-color: #444;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px; /* Adjust as needed */
+    margin: auto;
+}
+
+#registrationForm, #loginForm, #chatroom {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, button {
+    margin: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#chatMessages {
+    height: 200px; /* Adjust as needed */
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+#messageInput {
+    flex: 1;
+}
