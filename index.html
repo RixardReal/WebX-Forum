@@ -3,26 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RootChat - Anonymous Forum</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>RootChat</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to RootChat!</h1>
-        <!-- Display user's name or "Anonymous" if empty -->
-        <div id="username">Anonymous</div>
-    </header>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Welcome to RootChat</h1>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will be inserted here dynamically -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
 
-    <main>
-        <section id="chatroom">
-            <!-- Chat messages will be displayed here -->
-        </section>
-
-        <section id="text-input">
-            <textarea id="message-input" placeholder="Type your message..."></textarea>
-            <button id="send-button">Send</button>
-        </section>
-    </main>
+    <script>
+        function sendMessage() {
+            var messageInput = document.getElementById('message-input');
+            var message = messageInput.value.trim();
+            if (message !== '') {
+                // Replace with Lua endpoint for sending messages
+                fetch('/send-message', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: message })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    messageInput.value = '';
+                })
+                .catch(error => {
+                    console.error('Error sending message:', error);
+                });
+            }
+        }
+    </script>
 </body>
 </html>
