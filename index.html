@@ -3,43 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RootChat - Forum</title>
-    <link rel="icon" href="https://buss.log/icon.ico">
+    <title>RootChat - Anonymous Forum</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Welcome to RootChat!</h1>
+        <!-- Display user's name or "Anonymous" if empty -->
+        <div id="username">Anonymous</div>
+    </header>
 
-        <!-- Registration Form -->
-        <div id="registrationForm">
-            <h2>Register</h2>
-            <form id="registerForm" action="register.lua" method="post">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Register</button>
-            </form>
-        </div>
+    <main>
+        <section id="chatroom">
+            <!-- Chat messages will be displayed here -->
+        </section>
 
-        <!-- Login Form -->
-        <div id="loginForm">
-            <h2>Login</h2>
-            <form id="loginForm" action="login.lua" method="post">
-                <input type="text" name="loginUsername" placeholder="Username" required>
-                <input type="password" name="loginPassword" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-
-        <!-- Chatroom -->
-        <div id="chatroom">
-            <h2>Chatroom</h2>
-            <div id="chatMessages"></div>
-            <form id="messageForm" action="send_message.lua" method="post">
-                <input type="text" name="messageInput" placeholder="Type your message..." required>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </div>
+        <section id="text-input">
+            <textarea id="message-input" placeholder="Type your message..."></textarea>
+            <button id="send-button">Send</button>
+        </section>
+    </main>
 </body>
 </html>
