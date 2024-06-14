@@ -1,53 +1,70 @@
-/* Additional styles for forum elements */
-
-.container {
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #616161;
-    border-radius: 12px;
-    background-color: #444;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    max-width: 600px; /* Adjust as needed */
-    margin: auto;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
 }
 
-#registrationForm, #loginForm, #chatroom {
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-input, button {
-    margin: 10px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-}
-
-button {
-    cursor: pointer;
+header {
     background-color: #007bff;
-    color: #fff;
-    border: none;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#chatMessages {
-    height: 200px; /* Adjust as needed */
-    overflow-y: scroll;
-    border: 1px solid #ccc;
+    color: white;
+    text-align: center;
     padding: 10px;
-    background-color: #f2f2f2;
 }
 
-#messageInput {
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#username {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: calc(100vh - 80px); /* Adjust as needed */
+    padding: 20px;
+}
+
+#chatroom {
     flex: 1;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: auto;
+    height: 70vh; /* Adjust height for scrollable messages */
+}
+
+#text-input {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 20px;
+}
+
+#message-input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+#send-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#send-button:hover {
+    background-color: #0056b3;
 }
